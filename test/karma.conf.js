@@ -28,7 +28,6 @@ module.exports = function(config) {
       'src/edit/DistortHandle.js',
       'src/edit/RotateHandle.js',
       'src/DistortableImageOverlay.js',
-      'src/edit/DistortableImage.EditToolbar.js',      
       'src/edit/DistortableImage.Edit.js',
       'test/SpecHelper.js',
       'test/src/**/*Spec.js'

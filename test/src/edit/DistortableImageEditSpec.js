@@ -22,6 +22,7 @@ describe("L.DistortableImage.Edit", function() {
 		expect(overlay.editing).to.be.an.instanceOf(L.DistortableImage.Edit);
 	});
 
+/*
 	it("Should keep handles on the map in sync with the corners of the image.", function() {
 		var corners = overlay._corners;
 
@@ -30,18 +31,19 @@ describe("L.DistortableImage.Edit", function() {
 		overlay._updateCorner(0, new L.LatLng(41.7934, -87.6252));
 		overlay.fire('update');
 		
-		/* Warp handles are currently on the map; they should have been updated. */
+		// Warp handles are currently on the map; they should have been updated.
 		overlay.editing._distortHandles.eachLayer(function(handle) {
 			expect(handle.getLatLng()).to.be.closeToLatLng(corners[handle._corner]);
 		});
 
 		overlay.editing._toggleRotateDistort();
 
-		/* After we toggle modes, the rotateHandles are on the map and should be synced. */
+		// After we toggle modes, the rotateHandles are on the map and should be synced.
 		overlay.editing._rotateHandles.eachLayer(function(handle) {
 			expect(handle.getLatLng()).to.be.closeToLatLng(corners[handle._corner]);
 		});
 	});
+*/
 
 	it.skip("Should keep image in sync with the map while dragging.", function() {
 		var corners = overlay._corners,
@@ -51,10 +53,10 @@ describe("L.DistortableImage.Edit", function() {
 
 		dragging = overlay.editing.dragging;
 
-		/* _reset is not called by #onAdd, for some reason... */
+		// _reset is not called by #onAdd, for some reason...
 		overlay._reset();
 
-		/* Simulate a sequence of drag events. */
+		// Simulate a sequence of drag events.
 		dragging._onDown({ touches: [{ clientX: 0, clientY: 0 }], target: overlay._image });
 		dragging._onMove({ touches: [{ clientX: 20, clientY: 30 }], target: overlay._image });
 		dragging._onUp();

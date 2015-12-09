@@ -583,8 +583,8 @@ L.DistortableImage.Edit = L.Handler.extend({
 		if (this._mode === 'lock') {
 			map.addLayer(this._lockHandles);
 		} else {
-			this._mode = 'distort';
-			map.addLayer(this._distortHandles);
+			this._mode = 'rotate';
+			map.addLayer(this._rotateHandles);
 			this._enableDragging();
 		}
 
@@ -735,7 +735,7 @@ L.DistortableImage.Edit = L.Handler.extend({
 		map.removeLayer(this._handles[this._mode]);
 		/* Switch mode. */
 		if (this._mode === 'lock') { 
-			this._mode = 'distort'; 
+			this._mode = 'rotate'; 
 			this._enableDragging();
 		} else {
 			this._mode = 'lock';
