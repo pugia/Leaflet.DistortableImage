@@ -535,6 +535,8 @@ L.DistortableImage.Edit = L.Handler.extend({
 	options: {
 		opacity: 0.7,
 		outline: '1px solid red',
+		keymap: null
+/*
 		keymap: {
 			68: '_toggleRotateDistort', // d
 			76: '_toggleLock', // l
@@ -542,6 +544,7 @@ L.DistortableImage.Edit = L.Handler.extend({
 			82: '_toggleRotateDistort', // r
 			84: '_toggleTransparency', // t
 		}
+*/
 	},
 
 	initialize: function(overlay) {
@@ -684,6 +687,7 @@ L.DistortableImage.Edit = L.Handler.extend({
 	},
 
 	_onKeyDown: function(event) {
+		if (!this.options.keymap) { return; }
 		var keymap = this.options.keymap,
 			handlerName = keymap[event.which];
 
